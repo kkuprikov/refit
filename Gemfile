@@ -21,7 +21,7 @@ gem 'hanami-view'
 gem 'hanami-assets'
 gem 'slim'
 
-gem 'puma'
+gem 'puma', '>= 4.3.2'
 gem 'rack-test'
 
 group :development, :test do
