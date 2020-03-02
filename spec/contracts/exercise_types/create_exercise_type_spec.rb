@@ -6,19 +6,25 @@ RSpec.describe Fitter::Contracts::ExerciseTypes::CreateExerciseType do
 
     context 'without name provided' do
       let(:input) do
-        {}
+        {
+          exercise_type: {
+            name: nil
+          }
+        }
       end
 
       it "is invalid" do
         expect(result).to be_failure
-        expect(result.errors[:name]).to include("is missing")
+        expect(result.errors[:exercise_type][:name]).to include("must be filled")
       end
     end
 
     context 'with valid input' do
       let(:input) do
         {
-          name: 'Pull-Ups'
+          exercise_type: { 
+            name: 'Pull-Ups' 
+          }
         }
       end
 

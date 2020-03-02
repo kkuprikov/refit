@@ -1,10 +1,14 @@
 require_relative '../view'
 
-module Fitter
-  module Views
-    module ExerciseTypes
-      class New < Fitter::View
-        config.template = 'exercise_types/new'
+module ExerciseTypes
+  class New < Fitter::View
+
+    def form
+      form_for :exercise_type, '/exercise_types' do
+        label :name
+        text_field :name
+
+        submit 'Create'
       end
     end
   end

@@ -1,6 +1,10 @@
 module Fitter
-  class View < Dry::View
-    config.paths = [File.join(__dir__, "templates")]
-    config.layout = "application"
+  class View
+    include Hanami::View
+    include Hanami::Helpers
+
+    def params
+      {}
+    end
   end
 end

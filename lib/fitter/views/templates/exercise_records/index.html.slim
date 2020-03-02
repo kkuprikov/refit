@@ -1,0 +1,8 @@
+table
+  tr
+    th Date
+    th Progress
+  - exercise_records.each do |exercise|
+    tr
+      td= exercise.date 
+      td= exercise.progress

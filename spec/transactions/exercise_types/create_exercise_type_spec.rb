@@ -9,7 +9,9 @@ RSpec.describe Fitter::Transactions::ExerciseTypes::CreateExerciseType do
   context "with valid input" do
     let(:input) do
       {
-        name: "Pull-Ups"
+        exercise_type: {
+          name: "Pull-Ups"
+        }
       }
     end
 
@@ -24,7 +26,9 @@ RSpec.describe Fitter::Transactions::ExerciseTypes::CreateExerciseType do
   context "with invalid input" do
     let(:input) do
       {
-        name: nil
+        exercise_type: {
+          name: nil
+        }
       }
     end
 
@@ -32,7 +36,7 @@ RSpec.describe Fitter::Transactions::ExerciseTypes::CreateExerciseType do
       expect(exercise_type_repo).not_to receive(:create)
       result = subject.call(input)
       expect(result).to be_failure
-      expect(result.failure.errors[:name]).to include("must be filled")
+      expect(result.failure.errors[:exercise_type][:name]).to include("must be filled")
     end
   end
 end

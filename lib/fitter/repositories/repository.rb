@@ -21,7 +21,7 @@ module Fitter
       end
 
       def by_id(id)
-        root.by_pk(id).one!
+        root.by_pk(id).one
       end
 
       def create(attrs)

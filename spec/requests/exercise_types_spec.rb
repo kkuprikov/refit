@@ -9,11 +9,27 @@ RSpec.describe "/exercise_types" do
   let(:step1) { step_repo.create(id: 1, exercise_type_id: 1, index: 2, name: 'test1', type: 'count', progression: []) }
   let(:step2) { step_repo.create(id: 2, exercise_type_id: 1, index: 3, name: 'test2', type: 'count', progression: []) }
 
+  describe 'GET /new' do
+    it 'should render form' do
+      get '/exercise_types/new'
+      expect(last_response.status).to eq(200)
+    end
+  end
+
+  describe 'GET /' do
+    it 'should render exercises list' do
+      get '/exercise_types'
+      expect(last_response.status).to eq(200)
+    end
+  end
+
   describe "POST /" do
     context "with valid input" do
       let(:input) do
         {
-          name: "Push-Ups"
+          exercise_type: {
+            name: "Push-Ups"
+          }
         }
       end
 

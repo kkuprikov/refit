@@ -1,0 +1,8 @@
+table
+  tr
+    th Name
+    th Step ID
+  - exercise_types.each do |exercise|
+    tr
+      td= exercise.name 
+      td= exercise.current_step_id 
