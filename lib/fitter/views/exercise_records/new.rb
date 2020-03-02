@@ -18,7 +18,7 @@ module ExerciseRecords
               label :repetitions
               number_field :repetitions, name: 'repetitions[]', class: 'form-control', min: 1, max: 100, step: 1
               span class: 'input-group-btn' do
-                button class: 'btn btn-success btn-md', type: 'button' do
+                button class: 'btn btn-success btn-md btn-add', type: 'button' do
                   i class: 'fa fa-plus'
                 end
               end

@@ -5,6 +5,15 @@ Fitter::Application.boot(:web) do |app|
     require 'slim'
     require 'hanami-view'
     require 'hanami-helpers'
+    require 'hanami/assets'
+
+    Hanami::Assets.configure do
+      compile true
+
+      sources << [
+        'lib/fitter/views/assets'
+      ]
+    end
 
     Hanami::View.configure do
       root 'lib/fitter/views/templates'
@@ -12,5 +21,6 @@ Fitter::Application.boot(:web) do |app|
     end
 
     Hanami::View.load!
+    # Hanami::Assets::Precompiler.run
   end
 end

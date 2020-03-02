@@ -18,6 +18,7 @@ gem "hanami-controller", "~> 1.3"
 gem "hanami-router", "~> 1.3"
 gem 'hanami-helpers'
 gem 'hanami-view'
+gem 'hanami-assets'
 gem 'slim'
 
 gem 'puma'
