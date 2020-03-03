@@ -11,9 +11,12 @@ Fitter::Application.boot(:web) do |app|
       compile true
 
       sources << [
-        'lib/fitter/views/assets'
+        'lib/fitter/assets'
       ]
     end
+
+    Hanami::Assets.load!
+    Hanami::Assets.deploy
 
     Hanami::View.configure do
       root 'lib/fitter/views/templates'
@@ -21,6 +24,5 @@ Fitter::Application.boot(:web) do |app|
     end
 
     Hanami::View.load!
-    # Hanami::Assets::Precompiler.run
   end
 end

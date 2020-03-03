@@ -1,11 +1,11 @@
 module Fitter
   module Transactions
-    module ExerciseTypes
+    module ExerciseRecords
       class CreateExerciseRecord
         include Dry::Monads[:result]
         include Dry::Monads::Do.for(:call)
 
-        include Import["contracts.exercise_types.create_exercise_record"]
+        include Import["contracts.exercise_records.create_exercise_record"]
         include Import["repositories.exercise_record_repo"]
 
         def call(input)

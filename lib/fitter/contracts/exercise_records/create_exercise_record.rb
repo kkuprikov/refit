@@ -5,7 +5,7 @@ module Fitter
         params do
           required(:exercise_record).hash do
             required(:date).filled(:date)
-            required(:result).filled(:string)
+            required(:repetitions).value(array[:integer], min_size?: 1).each(:int?)
           end
         end
       end
